@@ -300,3 +300,21 @@ footer a{white-space:nowrap}
 @media(max-width:900px){
   .threadLabel{font-size:10px;stroke-width:3.5px}
 }
+
+/* Connection text floats above evidence without a heavy outline */
+#threads{z-index:1}
+#cards{position:absolute;inset:0;z-index:3}
+#threadLabels{z-index:6;pointer-events:none;overflow:visible}
+.threadLabel{
+  fill:#fff4e8;
+  stroke:none;
+  stroke-width:0;
+  paint-order:normal;
+  font-weight:600;
+}
+.threadLabelBack{
+  fill:#3a2020;
+  fill-opacity:.82;
+  stroke:#d84e5570;
+  stroke-width:1px;
+}
