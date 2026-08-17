@@ -1,4 +1,4 @@
-import createConspiracyEngine from './engine.js';
+import createConspiracyEngine from './engine.js?v=clue-grid-2';
 const $=s=>document.querySelector(s), board=$('#board'),cardsLayer=$('#cards'),threadGroup=$('#threads g');
 const workspace=$('.workspace'),analysis=$('#analysis'),findingsToggle=$('#findingsToggle');
 let engine,boardData={nodes:[],edges:[]},connecting=false,firstNode=null,drag=null;
