@@ -1,0 +1,42 @@
+name: Build C++ WebAssembly and deploy Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure native C++20 tests
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build and test graph engine
+        run: cmake --build build --parallel && ctest --test-dir build --output-on-failure
+  deploy:
+    needs: test
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.64
+      - name: Compile C++ engine to WebAssembly
+        run: emcmake cmake -S . -B build-wasm -DCMAKE_BUILD_TYPE=Release && cmake --build build-wasm --parallel
+      - name: Assemble static experience
+        run: mkdir -p public && cp web/index.html web/styles.css web/board.js build-wasm/web/engine.js build-wasm/web/engine.wasm public/ && touch public/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: deployment
+        uses: actions/deploy-pages@v4
