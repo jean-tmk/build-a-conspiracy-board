@@ -109,8 +109,7 @@ footer a{white-space:nowrap}
 /* Expandable findings drawer: preserve the full evidence wall until requested */
 .workspace{grid-template-columns:224px minmax(0,1fr)}
 .board{grid-column:2;grid-row:1}
-.analysis,
-@media(min-width:901px){.analysis}{
+.analysis{
   position:absolute;
   z-index:10;
   right:0;
