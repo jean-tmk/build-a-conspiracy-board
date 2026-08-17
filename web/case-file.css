@@ -23,3 +23,18 @@
 dialog form>small,dialog label{font-size:9px}dialog input,dialog textarea,dialog select{font-size:12px}.pinBtn{font-size:10px}#toast{font-size:9px}
 @media(max-width:900px) and (min-width:761px){.workspace{grid-template-columns:164px 1fr}.tools{padding-inline:11px}.tools button{min-height:65px;grid-template-columns:26px 1fr}.tools button i{font-size:23px}}
 @media(max-width:760px){.workspace{grid-template-columns:1fr}.tools{padding:7px;gap:7px}.tools button{min-height:56px;padding:7px 4px;display:block}.tools button i{font-size:20px}.tools button b{font-size:9px}.tools button small{font-size:7px}.boardTitle{font-size:8px}.workspace+footer,main>footer{font-size:7px}}
+
+/* Clearly readable scale — deliberately substantial, not incremental */
+.workspace{grid-template-columns:224px 1fr}
+.tools{padding:18px 16px;gap:10px}
+.tools>span{font-size:13px;line-height:1.25;letter-spacing:.06em}
+.tools button{min-height:72px;padding:10px 12px;grid-template-columns:36px 1fr;column-gap:10px}
+.tools button i{font-size:30px}.tools button b{font-size:14px;line-height:1.15;letter-spacing:.025em}.tools button small{font-size:11px;line-height:1.25}
+.legend{font-size:11px;grid-template-columns:12px 1fr;gap:8px 9px}.legend b{font-size:12px}.legend i{width:10px;height:10px}
+.caseMark b{font-size:9px}.caseMark span{font-size:8px}.caseSeal span,.caseSeal i{font-size:8px}
+.boardTitle{font-size:11px}.threadLabel{font-size:10px}.connectHint{font-size:11px}
+.card{width:clamp(155px,15vw,210px);min-height:125px}.card small{font-size:9px}.card h3{font-size:clamp(1.05rem,1.45vw,1.35rem)}.card p{font-size:12px;line-height:1.45}
+.analysis>span{font-size:11px}.score small{font-size:10px}.metrics small{font-size:10px}.analysis>p{font-size:14px}.central span{font-size:10px}.central b{font-size:18px}.disclaimer{font-size:9px}
+.workspace+footer,main>footer{font-size:10px}
+@media(max-width:1050px) and (min-width:761px){.workspace{grid-template-columns:202px 1fr}.tools{padding-inline:13px}.tools>span{font-size:11px}.tools button{grid-template-columns:31px 1fr}.tools button i{font-size:26px}.tools button b{font-size:12px}.tools button small{font-size:10px}.legend{font-size:9px}.legend b{font-size:10px}}
+@media(max-width:760px){.workspace{grid-template-columns:1fr}.tools button{min-height:58px;display:block}.tools button i{font-size:22px}.tools button b{font-size:10px}.tools button small{font-size:8px}.boardTitle{font-size:9px}.card p{font-size:11px}.workspace+footer,main>footer{font-size:8px}}
