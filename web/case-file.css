@@ -5,3 +5,21 @@
 .caseSeal{justify-self:end;align-self:center;width:112px;height:82px;border:1px solid #d84e5588;position:relative;rotate:3deg;display:grid;place-items:center;color:#d84e55}.caseSeal:before,.caseSeal:after{content:"";position:absolute;background:#d84e5544}.caseSeal:before{width:138px;height:1px;rotate:-20deg}.caseSeal:after{height:104px;width:1px;rotate:38deg}.caseSeal span{position:absolute;top:-6px;background:#101116;padding:0 7px;font:500 6px DM Mono;letter-spacing:.18em}.caseSeal b{font:800 42px/.8 Manrope;letter-spacing:-.08em}.caseSeal i{position:absolute;right:-20px;bottom:-8px;background:#e7bd52;color:#17171c;padding:5px 8px;font:500 6px/1.15 DM Mono;letter-spacing:.1em;rotate:-7deg}
 .workspace{grid-template-columns:138px 1fr}.tools{background:linear-gradient(180deg,#1b1c23,#15161b);padding:17px 12px;gap:9px}.tools>span{font-size:7px;color:#ffffff70;margin-bottom:7px}.tools button{padding:10px 9px}.tools button i{font-size:21px;line-height:1}.tools button b{margin-top:4px;font-size:8px}.tools button small{display:block;margin-top:2px;color:#ffffff68;font-size:7px}.legend{grid-template-columns:9px 1fr;gap:6px;color:#ffffff68;font-size:6px}.legend b{color:#ffffff9a;font-size:7px}.legend i{width:7px;height:7px}
 @media(max-width:760px){.caseSeal{display:none}.top h1>span:before{display:none}.workspace{grid-template-columns:1fr}.tools{padding:7px;gap:7px}.tools button{padding:7px 4px}.tools button b{font-size:7px}.tools button small{font-size:6px}}
+
+/* Readability pass: designed for comfortable reading at laptop distance */
+.workspace{grid-template-columns:178px 1fr}
+.tools{padding:18px 14px;gap:11px}
+.tools>span{font-size:10px;line-height:1.35;letter-spacing:.1em;color:#ffffffb5;margin-bottom:7px}
+.tools button{min-height:68px;padding:10px 11px;display:grid;grid-template-columns:30px 1fr;grid-template-rows:auto auto;column-gap:7px;align-content:center}
+.tools button i{grid-row:1/-1;align-self:center;font-size:27px}
+.tools button b{margin:0;font-size:11px;line-height:1.25;letter-spacing:.05em}
+.tools button small{margin-top:3px;font-size:9px;line-height:1.25;color:#ffffff9a}
+.legend{grid-template-columns:10px 1fr;gap:7px 8px;font-size:8px;line-height:1.25;color:#ffffff9a}
+.legend b{font-size:9px;color:#ffffffc2}.legend i{width:8px;height:8px}
+.boardTitle{font-size:9px;letter-spacing:.1em}.threadLabel{font-size:8px}.connectHint{font-size:9px}
+.card small{font-size:7px}.card h3{font-size:clamp(.95rem,1.35vw,1.22rem)}.card p{font-size:10px;line-height:1.45}
+.scribble{font-size:18px}.analysis>span{font-size:9px}.score small{font-size:8px}.metrics small{font-size:8px}.analysis>p{font-size:12px;line-height:1.6}.central span{font-size:8px}.central b{font-size:16px}.disclaimer{font-size:7px}
+.workspace+footer,main>footer{font-size:8px}
+dialog form>small,dialog label{font-size:9px}dialog input,dialog textarea,dialog select{font-size:12px}.pinBtn{font-size:10px}#toast{font-size:9px}
+@media(max-width:900px) and (min-width:761px){.workspace{grid-template-columns:164px 1fr}.tools{padding-inline:11px}.tools button{min-height:65px;grid-template-columns:26px 1fr}.tools button i{font-size:23px}}
+@media(max-width:760px){.workspace{grid-template-columns:1fr}.tools{padding:7px;gap:7px}.tools button{min-height:56px;padding:7px 4px;display:block}.tools button i{font-size:20px}.tools button b{font-size:9px}.tools button small{font-size:7px}.boardTitle{font-size:8px}.workspace+footer,main>footer{font-size:7px}}
