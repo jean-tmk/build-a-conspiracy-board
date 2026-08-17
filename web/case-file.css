@@ -280,3 +280,23 @@ footer a{white-space:nowrap}
   .workspace.findings-open .card{width:122px}
   .workspace.findings-open .card p{font-size:9px}
 }
+
+/* Hand-pinned irregularity and readable connection annotations */
+.card:nth-child(2n):before{left:58%}
+.card:nth-child(3n):before{left:42%}
+.card:nth-child(2n){box-shadow:11px 8px 22px #120b0b8f}
+.card:nth-child(3n){box-shadow:6px 14px 24px #120b0b99}
+.thread{stroke-width:2.6}
+.threadLabel{
+  fill:#fff4e8;
+  stroke:#2b1717;
+  stroke-width:4px;
+  paint-order:stroke fill;
+  stroke-linejoin:round;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.025em;
+}
+@media(max-width:900px){
+  .threadLabel{font-size:10px;stroke-width:3.5px}
+}
