@@ -243,3 +243,22 @@ footer a{white-space:nowrap}
 @media(max-width:1050px) and (min-width:761px){
   .analysis>.panelAnalyze{left:auto;right:auto}
 }
+
+/* Keep the analysis action fully visible at rest */
+.analysis>.panelAnalyze{
+  display:grid;
+  background:#17171c;
+  color:#f3efe5;
+  border:1px solid #ffffff22;
+  box-shadow:5px 5px 0 #d84e55;
+  opacity:1;
+  visibility:visible;
+}
+.analysis>.panelAnalyze span{color:#d84e55}
+.analysis>.panelAnalyze small{color:#ffffff82}
+
+/* Reserve room for the open drawer so clues remain visible beside it */
+@media(min-width:761px){
+  .board{transition:width .5s cubic-bezier(.16,1,.3,1)}
+  .workspace.findings-open .board{width:calc(100% - min(390px,90vw))}
+}
