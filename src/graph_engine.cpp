@@ -305,11 +305,11 @@ void GraphEngine::load_demo_case() {
   clear();
   const int lighthouse = add_node("The lighthouse blinked twice", "Logbook says the lamp was dark all night.", "place", 18, 18, .82);
   const int receipt = add_node("Receipt / 02:17 AM", "Coffee, batteries, and one red umbrella.", "document", 55, 12, .91);
-  const int caller = add_node("Unknown caller", "Seven seconds of breathing, then a ship bell.", "signal", 78, 31, .63);
+  const int caller = add_node("Unknown caller", "Seven seconds of breathing, then a ship bell.", "signal", 60, 31, .63);
   const int marina = add_node("Marina camera 04", "Missing exactly eleven minutes of footage.", "object", 36, 43, .88);
   const int gardener = add_node("The night gardener", "Claims the roses were louder than usual.", "person", 10, 62, .47);
   const int key = add_node("Brass key marked B", "Saltwater corrosion; no matching lock found.", "object", 62, 67, .76);
-  const int tide = add_node("Impossible low tide", "Occurred forty-three minutes ahead of schedule.", "event", 84, 78, .71);
+  const int tide = add_node("Impossible low tide", "Occurred forty-three minutes ahead of schedule.", "event", 68, 74, .71);
   add_edge(lighthouse, marina, "same power circuit", .7, true);
   add_edge(receipt, caller, "timestamp overlap", .8, false);
   add_edge(receipt, marina, "umbrella in frame", .55, false);
