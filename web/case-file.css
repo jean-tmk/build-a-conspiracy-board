@@ -221,3 +221,25 @@ footer a{white-space:nowrap}
 @media(max-width:1050px) and (min-width:761px){
   .panelAnalyze{left:22px;right:22px}
 }
+
+/* Findings actions belong to the content flow, not the close-button layer */
+.analysis{padding-bottom:28px}
+.analysis>.panelAnalyze{
+  position:relative;
+  inset:auto;
+  left:auto;
+  right:auto;
+  top:auto;
+  bottom:auto;
+  width:100%;
+  min-height:62px;
+  margin:20px 0 0;
+}
+.analysis>.disclaimer{
+  position:static;
+  display:block;
+  margin-top:18px;
+}
+@media(max-width:1050px) and (min-width:761px){
+  .analysis>.panelAnalyze{left:auto;right:auto}
+}
