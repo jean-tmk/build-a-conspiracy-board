@@ -38,3 +38,31 @@ dialog form>small,dialog label{font-size:9px}dialog input,dialog textarea,dialog
 .workspace+footer,main>footer{font-size:10px}
 @media(max-width:1050px) and (min-width:761px){.workspace{grid-template-columns:202px 1fr}.tools{padding-inline:13px}.tools>span{font-size:11px}.tools button{grid-template-columns:31px 1fr}.tools button i{font-size:26px}.tools button b{font-size:12px}.tools button small{font-size:10px}.legend{font-size:9px}.legend b{font-size:10px}}
 @media(max-width:760px){.workspace{grid-template-columns:1fr}.tools button{min-height:58px;display:block}.tools button i{font-size:22px}.tools button b{font-size:10px}.tools button small{font-size:8px}.boardTitle{font-size:9px}.card p{font-size:11px}.workspace+footer,main>footer{font-size:8px}}
+
+/* Viewport containment: keep the full case board inside the visible width */
+html,body,main{width:100%;max-width:100%;overflow-x:clip}
+.top,.workspace,.board,.tools{min-width:0;max-width:100%}
+.top>*{min-width:0}
+.top h1{max-width:100%}
+.workspace{width:100%;overflow:hidden}
+.board{width:100%}
+.workspace+footer,main>footer{min-width:0;gap:18px}
+.workspace+footer>*,main>footer>*{min-width:0}
+footer a{white-space:nowrap}
+
+@media(max-width:1050px) and (min-width:761px){
+  .top{grid-template-columns:minmax(120px,.8fr) minmax(0,2.2fr) minmax(90px,.7fr)}
+  .top h1{font-size:clamp(2.75rem,6vw,5rem)}
+  .caseSeal{width:94px}
+}
+
+@media(max-width:760px){
+  html,body,main{overflow-x:hidden}
+  .top{grid-template-columns:minmax(0,1fr) auto}
+  .top h1{width:100%;font-size:clamp(2.35rem,11.5vw,3.2rem)}
+  .tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));height:auto}
+  .tools button{min-width:0;width:100%;overflow:hidden}
+  .tools button b,.tools button small{overflow-wrap:anywhere}
+  .board{width:100%;max-width:100vw}
+  .workspace+footer,main>footer{padding-inline:14px}
+}
