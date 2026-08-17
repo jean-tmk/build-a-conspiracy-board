@@ -154,3 +154,70 @@ footer a{white-space:nowrap}
   .findingsToggle{position:fixed;top:56%;z-index:12}
   .workspace.findings-open .findingsToggle{right:min(390px,90vw)}
 }
+
+/* Stronger collapsed case-file tab and in-panel calculation control */
+.analysis{padding-bottom:132px}
+.findingsToggle{
+  width:54px;
+  min-height:154px;
+  padding:17px 10px 14px;
+  border:2px solid #d84e55;
+  border-right:0;
+  background:
+    linear-gradient(180deg,#d84e55 0 8px,transparent 8px),
+    repeating-linear-gradient(135deg,#ffffff08 0 5px,transparent 5px 10px),
+    #17171c;
+  color:#fff;
+  box-shadow:-9px 0 28px #0008,0 0 0 1px #e7bd5238 inset;
+  font-size:11px;
+  letter-spacing:.16em;
+}
+.findingsToggle:before{
+  content:"CASE 017";
+  display:inline-block;
+  margin-bottom:12px;
+  color:#e7bd52;
+  font:500 8px/1 DM Mono;
+  letter-spacing:.12em;
+}
+.findingsToggle:after{
+  content:"";
+  display:inline-block;
+  width:7px;
+  height:7px;
+  margin-top:12px;
+  border-radius:50%;
+  background:#d84e55;
+  box-shadow:0 0 0 4px #d84e5526,0 0 12px #d84e55;
+}
+.workspace:not(.findings-open) .findingsToggle{animation:findingsNudge 4s ease-in-out infinite}
+.workspace.findings-open .findingsToggle{animation:none;background:#d84e55}
+@keyframes findingsNudge{0%,78%,100%{translate:0 -50%}84%{translate:-7px -50%}90%{translate:0 -50%}94%{translate:-3px -50%}}
+
+.panelAnalyze{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:42px;
+  min-height:58px;
+  display:grid;
+  grid-template-columns:34px 1fr;
+  grid-template-rows:auto auto;
+  column-gap:9px;
+  align-content:center;
+  border:0;
+  background:#17171c;
+  color:#f3efe5;
+  padding:10px 14px;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:5px 5px 0 #d84e55;
+  transition:translate .2s,box-shadow .2s,background .2s;
+}
+.panelAnalyze:hover{translate:-2px -2px;box-shadow:8px 8px 0 #d84e55;background:#23232a}
+.panelAnalyze span{grid-row:1/-1;align-self:center;color:#d84e55;font-size:25px}
+.panelAnalyze b{font:700 12px/1.1 DM Mono;letter-spacing:.08em}
+.panelAnalyze small{margin-top:3px;color:#ffffff82;font:500 9px/1 DM Mono}
+@media(max-width:1050px) and (min-width:761px){
+  .panelAnalyze{left:22px;right:22px}
+}
